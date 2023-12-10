@@ -20,9 +20,15 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        
+
+      - name: Update Browserslist
+        run: npx update-browserslist-db@latest
+
       - name: Build
         run: npm run build
+
+      - name: Lint
+        run: npm run lint -- --no-verify
 
   deploy:
     runs-on: ubuntu-latest
@@ -34,8 +40,3 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./build
-
-      - name: Install and Serve with Serve
-        run: |
-          npm install -g serve
-          serve -s build
