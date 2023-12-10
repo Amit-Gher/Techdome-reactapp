@@ -34,3 +34,8 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./build
+
+      - name: Install and Serve with Serve
+         run: |
+          npm install -g serve
+          serve -s build     
