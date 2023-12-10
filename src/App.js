@@ -11,7 +11,7 @@ import { loadUser } from './actions/userAction'
 const App = () => {
 
   const dispatch = useDispatch();
-
+ // eslint-disable-next-line
   useEffect(() => {
     dispatch(loadUser());
   }, []);
