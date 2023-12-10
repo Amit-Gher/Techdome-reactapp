@@ -36,5 +36,6 @@ jobs:
           publish_dir: ./build
 
       - name: Install and Serve with Serve
-         run: npm install -g serve
-              serve -s build     
+        run: |
+          npm install -g serve
+          serve -s build
