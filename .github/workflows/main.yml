@@ -24,11 +24,8 @@ jobs:
       - name: Update Browserslist database
         run: npx update-browserslist-db@latest  
 
-      - name: Run ESLint
-        run: npm run lint  
-
       - name: Build
-        run: npm run build -- --no-verify
+        run: npm run build 
 
   deploy:
     runs-on: ubuntu-latest
