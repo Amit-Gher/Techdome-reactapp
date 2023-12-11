@@ -1,4 +1,4 @@
-import { ADD_BLOG, BLOG_REQUEST, BLOG_SUCCESS, ADD_NEW_BLOG, DEL_BLOG, UPDATE_NEW_BLOG } from "../constants/blogConstants";
+import { BLOG_REQUEST, BLOG_SUCCESS, ADD_NEW_BLOG, DEL_BLOG, UPDATE_NEW_BLOG } from "../constants/blogConstants";
 import axios from "axios";
 import axiosNew from "../apiConfig/api";
 
@@ -8,7 +8,7 @@ const uploadData = async (data, dispatch) => {
     try {
         const config = { headers: { "Content-Type": "application/json" } };
         const res = await axiosNew.post("/add_blog", data, config);
-        dispatch({ type: ADD_BLOG, payload: res.data.blog });
+        dispatch({ type: ADD_NEW_BLOG, payload: res.data.blog });
     } catch (error) {
         console.log(error);
     }
